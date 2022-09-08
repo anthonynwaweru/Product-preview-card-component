@@ -10,6 +10,8 @@
 
   --bg-color: #f2eae2;
   --button-color: #3d8168;
+
+  --hover-background: #1a4032;
 }
 * {
   margin: 0;
@@ -30,6 +32,12 @@ body {
   justify-content: center;
 }
 
+/* .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .card {
   max-width: 37.5rem;
   border-radius: 10px;
@@ -39,39 +47,23 @@ body {
   overflow: hidden;
 }
 
-.image-content {
-  /* height: 100%; */
-  /* width: 100%; */
-  /* display: flex; */
+.card-info {
+  display: flex;
+  flex-direction: column;
   /* align-items: center; */
-  /* justify-content: center; */
-  overflow: hidden;
-}
-
-.image-content img {
-  object-fit: cover;
-}
-
-.info {
-  /* flex: 1; */
-  /* height: 100%; */
-  /* width: 100%; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
+  justify-content: space-between;
   padding: 2rem;
 }
 
-.lead {
+.lead-title {
   color: var(--ff-body-color);
   font-family: var(--body-fonts);
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-
-  letter-spacing: 5px;
-  margin-bottom: 20px;
+  line-height: 0.938rem;
+  letter-spacing: 0.313;
+  text-transform: uppercase;
 }
 
 .title {
@@ -79,9 +71,8 @@ body {
   font-family: var(--h1-fonts);
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 32px;
-  margin-bottom: 24px;
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
 .subtitle {
@@ -89,17 +80,13 @@ body {
   color: var(--ff-body-color);
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 23px;
-  margin-bottom: 34px;
+  font-size: 0.875rem;
+  line-height: 1.438rem;
 }
 
 .price-title {
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 34px;
 }
 
 .cur-price {
@@ -114,25 +101,94 @@ body {
 
 .prev-price {
   color: var(--ff-body-color);
-  font-family: var(--ff-body-color);
+  font-family: var(--body-fonts);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 23px;
   text-decoration: line-through;
 }
 
-button {
+.btn {
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--button-color);
+  max-width: 14.75rem;
+  height: 3rem;
+  border-radius: 8px;
   color: #ffffff;
-  padding: 0.938rem 3.938rem;
+  background-color: var(--button-color);
   border: none;
-  border-radius: 0.5rem;
+  font-family: var(--body-fonts);
+  font-style: normal;
   font-weight: 700;
   font-size: 0.875rem;
-  line-height: 1.0625rem;
+  line-height: 1.063rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn svg {
-  margin-right: 0.5rem;
+.btn .icon {
+  margin-right: 0.726rem;
+}
+
+.mobile-img {
+  display: none;
+}
+
+@media (max-width: 510px) {
+  .desktop-img {
+    display: none;
+  }
+  .mobile-img {
+    display: flex;
+    /* width: 100%; */
+    object-fit: cover;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-around;
+  }
+
+  .lead-title {
+    margin-bottom: 0.75rem;
+  }
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    margin-bottom: 1.5rem;
+  }
+  .price-title {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.btn:hover {
+  background-color: var(--hover-background);
+  transition: all ease-in 0.5s;
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  font-family: var(--body-fonts);
+  margin-top: 0.5rem;
+}
+.attribution a {
+  color: var(--ff-pricing-color);
+  font-weight: bold;
+}
+
+.attribution a:hover {
+  color: var(--hover-background);
+  transition: all ease 0.5s;
 }
